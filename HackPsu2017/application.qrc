@@ -1,0 +1,11 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+	<file>arrowleft.bmp</file>
+	<file>bo.jpg</file>
+	<file>camaro.bmp</file>
+	<file>chrg.bmp</file>
+	<file>chub.bmp</file>
+	<file>thermooutline.jpg</file>
+	<file>unchrg.bmp</file>
+</qresource>
+</RCC>
