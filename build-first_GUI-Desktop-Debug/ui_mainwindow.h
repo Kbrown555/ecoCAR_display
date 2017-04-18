@@ -13,7 +13,6 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
-#include <QtGui/QDial>
 #include <QtGui/QFrame>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLCDNumber>
@@ -43,18 +42,6 @@ public:
     QLCDNumber *regen_num;
     QLCDNumber *dischargenum;
     QWidget *tab_2;
-    QDial *eng_dial;
-    QDial *mot_dial;
-    QLabel *label_5;
-    QLabel *label_7;
-    QLabel *label_8;
-    QLabel *label_9;
-    QLabel *label_10;
-    QLabel *label_11;
-    QLabel *label_12;
-    QLabel *label_13;
-    QLabel *label_14;
-    QLabel *label_15;
     QWidget *tab_3;
     QLabel *label_4;
     QLabel *fatboy;
@@ -180,12 +167,12 @@ public:
         bat_out->setGeometry(QRect(17, 28, 299, 97));
         bat_out->setFrameShape(QFrame::NoFrame);
         bat_out->setTextFormat(Qt::PlainText);
-        bat_out->setPixmap(QPixmap(QString::fromUtf8("../build-first_GUI-Desktop-Debug/bo.jpg")));
+        bat_out->setPixmap(QPixmap(QString::fromUtf8(":/bo.jpg")));
         bat_out->setScaledContents(true);
         label_3 = new QLabel(tab);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(320, 10, 101, 295));
-        label_3->setPixmap(QPixmap(QString::fromUtf8("../build-first_GUI-Desktop-Debug/thermooutline.jpg")));
+        label_3->setPixmap(QPixmap(QString::fromUtf8(":/thermooutline.jpg")));
         label_3->setScaledContents(true);
         line = new QFrame(tab);
         line->setObjectName(QString::fromUtf8("line"));
@@ -217,118 +204,38 @@ public:
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         tab_2->setStyleSheet(QString::fromUtf8(""));
-        eng_dial = new QDial(tab_2);
-        eng_dial->setObjectName(QString::fromUtf8("eng_dial"));
-        eng_dial->setGeometry(QRect(30, 90, 161, 141));
-        eng_dial->setMaximum(210);
-        eng_dial->setSingleStep(10);
-        eng_dial->setNotchesVisible(true);
-        mot_dial = new QDial(tab_2);
-        mot_dial->setObjectName(QString::fromUtf8("mot_dial"));
-        mot_dial->setGeometry(QRect(240, 90, 161, 141));
-        mot_dial->setMinimum(-35);
-        mot_dial->setMaximum(75);
-        mot_dial->setSingleStep(10);
-        mot_dial->setNotchesVisible(true);
-        label_5 = new QLabel(tab_2);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(70, 250, 91, 51));
-        label_5->setStyleSheet(QString::fromUtf8("background-color:black;\n"
-"color:white;"));
-        label_5->setFrameShadow(QFrame::Sunken);
-        label_5->setTextFormat(Qt::RichText);
-        label_7 = new QLabel(tab_2);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(270, 250, 91, 51));
-        label_7->setStyleSheet(QString::fromUtf8("background-color:black;\n"
-"color:white;"));
-        label_7->setFrameShadow(QFrame::Sunken);
-        label_7->setTextFormat(Qt::RichText);
-        label_8 = new QLabel(tab_2);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(88, 65, 41, 21));
-        label_8->setStyleSheet(QString::fromUtf8("background-color: black;\n"
-"color: white;"));
-        label_9 = new QLabel(tab_2);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(178, 112, 41, 21));
-        label_9->setStyleSheet(QString::fromUtf8("background-color: black;\n"
-"color: white;"));
-        label_10 = new QLabel(tab_2);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setGeometry(QRect(165, 201, 41, 21));
-        label_10->setStyleSheet(QString::fromUtf8("background-color: black;\n"
-"color: white;"));
-        label_11 = new QLabel(tab_2);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setGeometry(QRect(15, 134, 41, 21));
-        label_11->setStyleSheet(QString::fromUtf8("background-color: black;\n"
-"color: white;"));
-        label_12 = new QLabel(tab_2);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setGeometry(QRect(230, 190, 41, 21));
-        label_12->setStyleSheet(QString::fromUtf8("background-color:black;\n"
-"color:white;"));
-        label_13 = new QLabel(tab_2);
-        label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setGeometry(QRect(225, 120, 41, 21));
-        label_13->setStyleSheet(QString::fromUtf8("background-color:black;\n"
-"color:white;"));
-        label_13->setWordWrap(false);
-        label_14 = new QLabel(tab_2);
-        label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setGeometry(QRect(330, 70, 41, 21));
-        label_14->setStyleSheet(QString::fromUtf8("background-color:black;\n"
-"color:white;"));
-        label_15 = new QLabel(tab_2);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setGeometry(QRect(398, 155, 41, 21));
-        label_15->setStyleSheet(QString::fromUtf8("background-color:black;\n"
-"color:white;"));
         tabWidget->addTab(tab_2, QString());
-        label_5->raise();
-        label_7->raise();
-        label_8->raise();
-        label_9->raise();
-        label_10->raise();
-        label_11->raise();
-        eng_dial->raise();
-        label_12->raise();
-        label_13->raise();
-        label_14->raise();
-        label_15->raise();
-        mot_dial->raise();
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
         label_4 = new QLabel(tab_3);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(0, 50, 421, 201));
-        label_4->setPixmap(QPixmap(QString::fromUtf8("../build-first_GUI-Desktop-Debug/camaro.bmp")));
+        label_4->setPixmap(QPixmap(QString::fromUtf8(":/camaro.bmp")));
         label_4->setScaledContents(true);
         fatboy = new QLabel(tab_3);
         fatboy->setObjectName(QString::fromUtf8("fatboy"));
         fatboy->setGeometry(QRect(110, 126, 151, 50));
-        fatboy->setPixmap(QPixmap(QString::fromUtf8("../build-first_GUI-Desktop-Debug/arrowleft.bmp")));
+        fatboy->setPixmap(QPixmap(QString::fromUtf8(":/arrowleft.bmp")));
         fatboy->setScaledContents(true);
         label_6 = new QLabel(tab_3);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(300, 140, 31, 21));
-        label_6->setPixmap(QPixmap(QString::fromUtf8("../build-first_GUI-Desktop-Debug/chub.bmp")));
+        label_6->setPixmap(QPixmap(QString::fromUtf8(":/chub.bmp")));
         label_6->setScaledContents(true);
         skinnyboy = new QLabel(tab_3);
         skinnyboy->setObjectName(QString::fromUtf8("skinnyboy"));
         skinnyboy->setGeometry(QRect(110, 140, 151, 21));
-        skinnyboy->setPixmap(QPixmap(QString::fromUtf8("../build-first_GUI-Desktop-Debug/arrowleft.bmp")));
+        skinnyboy->setPixmap(QPixmap(QString::fromUtf8(":/arrowleft.bmp")));
         skinnyboy->setScaledContents(true);
         dischargearrow = new QLabel(tab_3);
         dischargearrow->setObjectName(QString::fromUtf8("dischargearrow"));
         dischargearrow->setGeometry(QRect(70, 90, 201, 31));
-        dischargearrow->setPixmap(QPixmap(QString::fromUtf8("../build-first_GUI-Desktop-Debug/unchrg.bmp")));
+        dischargearrow->setPixmap(QPixmap(QString::fromUtf8(":/chrg.bmp")));
         dischargearrow->setScaledContents(true);
         chargarrow = new QLabel(tab_3);
         chargarrow->setObjectName(QString::fromUtf8("chargarrow"));
         chargarrow->setGeometry(QRect(80, 90, 191, 31));
-        chargarrow->setPixmap(QPixmap(QString::fromUtf8("../build-first_GUI-Desktop-Debug/chrg.bmp")));
+        chargarrow->setPixmap(QPixmap(QString::fromUtf8(":/unchrg.bmp")));
         chargarrow->setScaledContents(true);
         progressBar = new QProgressBar(tab_3);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
@@ -491,16 +398,6 @@ public:
         bat_out->setText(QString());
         label_3->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Battery", 0, QApplication::UnicodeUTF8));
-        label_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">Engine </span></p><p align=\"center\"><span style=\" color:#ffffff;\">Power [HP]</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#f5eded;\">Motor </span></p><p align=\"center\"><span style=\" color:#f5eded;\">Power [kW]</span></p></body></html>", 0, QApplication::UnicodeUTF8));
-        label_8->setText(QApplication::translate("MainWindow", "100", 0, QApplication::UnicodeUTF8));
-        label_9->setText(QApplication::translate("MainWindow", "150", 0, QApplication::UnicodeUTF8));
-        label_10->setText(QApplication::translate("MainWindow", "200", 0, QApplication::UnicodeUTF8));
-        label_11->setText(QApplication::translate("MainWindow", "50", 0, QApplication::UnicodeUTF8));
-        label_12->setText(QApplication::translate("MainWindow", "-25", 0, QApplication::UnicodeUTF8));
-        label_13->setText(QApplication::translate("MainWindow", "-05", 0, QApplication::UnicodeUTF8));
-        label_14->setText(QApplication::translate("MainWindow", "25", 0, QApplication::UnicodeUTF8));
-        label_15->setText(QApplication::translate("MainWindow", "55", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Car Info", 0, QApplication::UnicodeUTF8));
         label_4->setText(QString());
         fatboy->setText(QString());
