@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     //EcoCAR w;
     MainWindow w;
     //w.updateValue();
-    w.show();
+    w.showFullScreen();
 
 
     //w.startTimer();
