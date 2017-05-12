@@ -29,9 +29,9 @@ void CanHandler::getPowerData(double &MotTrq,double &MotSpd, double &EngTrq){
     canReadSpecificSkip(hnd,id,&msgBuffer,&dlc,NULL,NULL);
     for(int i=0;i<8;i++)
         data[i]=(int)msgBuffer[i];
-    MotSpd= (data[0]*256+data[1])-32768;
-    MotTrq= (data[2]*256+data[3])-32768;
-    EngTrq= (data[4]*256+data[5])-32768;
+    MotSpd= (data[1]*256+data[0])-32768;
+    MotTrq= (data[3]*256+data[2])-32768;
+    EngTrq= (data[5]*256+data[4])-32768;
 
 }
 

@@ -67,7 +67,7 @@ void MainWindow::startTimer(){
 
     secondPage= new QTimer(this);
     connect(secondPage,SIGNAL(timeout()),this,SLOT(updateSecondPage()));
-    timer->start(100);
+    secondPage->start(100);
 }
 
 
