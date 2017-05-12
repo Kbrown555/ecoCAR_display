@@ -20,6 +20,7 @@ public:
 
     void getData(double &,double &);
     void getTempData(double &);
+    void getPowerData(double &, double &,double &);
 private:
     canHandle hnd;
 

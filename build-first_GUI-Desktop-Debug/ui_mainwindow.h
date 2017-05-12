@@ -42,6 +42,10 @@ public:
     QLCDNumber *regen_num;
     QLCDNumber *dischargenum;
     QWidget *tab_2;
+    QProgressBar *EnginePow;
+    QProgressBar *MotPow;
+    QLabel *label_5;
+    QLabel *label_7;
     QWidget *tab_3;
     QLabel *label_4;
     QLabel *fatboy;
@@ -204,6 +208,26 @@ public:
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         tab_2->setStyleSheet(QString::fromUtf8(""));
+        EnginePow = new QProgressBar(tab_2);
+        EnginePow->setObjectName(QString::fromUtf8("EnginePow"));
+        EnginePow->setGeometry(QRect(30, 60, 331, 81));
+        EnginePow->setValue(24);
+        MotPow = new QProgressBar(tab_2);
+        MotPow->setObjectName(QString::fromUtf8("MotPow"));
+        MotPow->setGeometry(QRect(30, 200, 331, 81));
+        MotPow->setValue(24);
+        label_5 = new QLabel(tab_2);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(30, 40, 131, 21));
+        label_5->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"color:white;\n"
+"}"));
+        label_7 = new QLabel(tab_2);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(30, 180, 131, 21));
+        label_7->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"color:white;\n"
+"}"));
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
@@ -384,7 +408,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -398,7 +422,9 @@ public:
         bat_out->setText(QString());
         label_3->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Battery", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Car Info", 0, QApplication::UnicodeUTF8));
+        label_5->setText(QApplication::translate("MainWindow", "Engine Power", 0, QApplication::UnicodeUTF8));
+        label_7->setText(QApplication::translate("MainWindow", "Motor  Power", 0, QApplication::UnicodeUTF8));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Power", 0, QApplication::UnicodeUTF8));
         label_4->setText(QString());
         fatboy->setText(QString());
         label_6->setText(QString());

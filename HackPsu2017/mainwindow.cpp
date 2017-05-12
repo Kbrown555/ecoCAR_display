@@ -64,6 +64,10 @@ void MainWindow::startTimer(){
     timer= new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(updateValueTimed()));
     timer->start(100);
+
+    secondPage= new QTimer(this);
+    connect(secondPage,SIGNAL(timeout()),this,SLOT(updateSecondPage()));
+    timer->start(100);
 }
 
 
@@ -78,7 +82,7 @@ void MainWindow::updateValueTimed(){
 
     ui->SOC_prog->setValue(newSOC);
     ui->SOC_prog->setFormat(QString().sprintf("%.1f%",newSOC));
-    if(newSOC>20)
+    if(newSOC>25)
         ui->SOC_prog->setStyleSheet(allgood.append(basestr));
     else
         ui->SOC_prog->setStyleSheet(notgood.append(basestr));
@@ -114,7 +118,20 @@ void MainWindow::updateValueTimed(){
 
 }
 
+void MainWindow::updateSecondPage(){
+    double MotSpd,MotTrq,EngTrq;
+    can->getPowerData(MotTrq,MotSpd,EngTrq);
 
+    double engPow, motPow;
+    engPow=MotSpd*EngTrq;
+    motPow=MotSpd*MotTrq;
+
+    ui->MotPow->setValue((int)motPow);
+    ui->MotPow->setFormat(QString::number(motPow)+QString::fromUtf8(" kW"));
+
+    ui->EnginePow->setValue((int)engPow);
+    ui->EnginePow->setFormat(QString::number(engPow)+QString::fromUtf8(" kW"));
+}
 
 void MainWindow::updateOrbs(){
     static int currOrb=0;

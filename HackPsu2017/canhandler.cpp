@@ -7,7 +7,7 @@ CanHandler::CanHandler()
     canInitializeLibrary();
     hnd=canOpenChannel(0,canWANT_EXCLUSIVE);
     if(hnd<0){
-
+        exit(5);
     }
 
     canSetBusParams(hnd,canBITRATE_500K,0,0,0,0,0);
@@ -15,9 +15,24 @@ CanHandler::CanHandler()
     canSetBusOutputControl(hnd,canDRIVER_NORMAL);
     stat = canBusOn(hnd);
     if(stat!= canOK){
-
+        exit(6);
     }
    // canBusOff(hnd);
+}
+
+void CanHandler::getPowerData(double &MotTrq,double &MotSpd, double &EngTrq){
+    unsigned char msgBuffer[8];
+    int data[8];
+    int id= 837;
+    uint dlc;
+
+    canReadSpecificSkip(hnd,id,&msgBuffer,&dlc,NULL,NULL);
+    for(int i=0;i<8;i++)
+        data[i]=(int)msgBuffer[i];
+    MotSpd= (data[0]*256+data[1])-32768;
+    MotTrq= (data[2]*256+data[3])-32768;
+    EngTrq= (data[4]*256+data[5])-32768;
+
 }
 
 void CanHandler::getData(double &CurrSOC,double &current){

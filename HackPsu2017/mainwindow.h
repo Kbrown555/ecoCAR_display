@@ -26,12 +26,13 @@ public slots:
     void updateValueTimed();
     void updateShaftOrbs();
     void updateOrbs();
+    void updateSecondPage();
 
 private:
     bool regen;
     Ui::MainWindow *ui;
     CanHandler *can;
-    QTimer *timer,*timerShaftOrb,*orbDischarge;
+    QTimer *timer,*timerShaftOrb,*orbDischarge,*secondPage;
 };
 
 #endif // MAINWINDOW_H
