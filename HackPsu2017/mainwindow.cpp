@@ -85,7 +85,7 @@ void MainWindow::updateValueTimed(){
     can->getData(newSOC,newCurr);
 
     ui->SOC_prog->setValue(newSOC);
-    ui->SOC_prog->setFormat(QString().sprintf("%.1f%",newSOC));
+    ui->SOC_prog->setFormat(QString().sprintf("%.1f",newSOC));
     if(newSOC>25)
         ui->SOC_prog->setStyleSheet(allgood.append(basestr));
     else
@@ -132,10 +132,10 @@ void MainWindow::updateSecondPage(){
     if(motPow<0)
         motPow=0;
     ui->MotPow->setValue((int)motPow);
-    ui->MotPow->setFormat(QString::number(motPow)+QString::fromUtf8(" kW"));
+    ui->MotPow->setFormat(QString().sprintf("%.1f",motPow)+QString::fromUtf8(" kW"));
 
     ui->EnginePow->setValue((int)engPow);
-    ui->EnginePow->setFormat(QString::number(engPow)+QString::fromUtf8(" kW"));
+    ui->EnginePow->setFormat(QString().sprintf("%.1f",engPow)+QString::fromUtf8(" kW"));
 }
 
 void MainWindow::updateOrbs(){
