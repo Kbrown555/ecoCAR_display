@@ -211,10 +211,36 @@ public:
         EnginePow = new QProgressBar(tab_2);
         EnginePow->setObjectName(QString::fromUtf8("EnginePow"));
         EnginePow->setGeometry(QRect(30, 60, 331, 81));
+        EnginePow->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
+"border: 2px solid black;\n"
+"border-radius: 5px;\n"
+"text-align: center;\n"
+"color:white;\n"
+"background:grey;\n"
+"}\n"
+"QProgressBar::chunk{\n"
+"border-radius: 5px;\n"
+"color: red;\n"
+"background-color:rgb(149, 11, 11);\n"
+"}\n"
+""));
         EnginePow->setValue(24);
         MotPow = new QProgressBar(tab_2);
         MotPow->setObjectName(QString::fromUtf8("MotPow"));
         MotPow->setGeometry(QRect(30, 200, 331, 81));
+        MotPow->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
+"border: 2px solid black;\n"
+"border-radius: 5px;\n"
+"text-align: center;\n"
+"color:white;\n"
+"background:grey;\n"
+"}\n"
+"QProgressBar::chunk{\n"
+"border-radius: 5px;\n"
+"color: red;\n"
+"background-color:rgb(25, 143, 41);\n"
+"}\n"
+""));
         MotPow->setValue(24);
         label_5 = new QLabel(tab_2);
         label_5->setObjectName(QString::fromUtf8("label_5"));
@@ -254,12 +280,12 @@ public:
         dischargearrow = new QLabel(tab_3);
         dischargearrow->setObjectName(QString::fromUtf8("dischargearrow"));
         dischargearrow->setGeometry(QRect(70, 90, 201, 31));
-        dischargearrow->setPixmap(QPixmap(QString::fromUtf8(":/chrg.bmp")));
+        dischargearrow->setPixmap(QPixmap(QString::fromUtf8(":/unchrg.bmp")));
         dischargearrow->setScaledContents(true);
         chargarrow = new QLabel(tab_3);
         chargarrow->setObjectName(QString::fromUtf8("chargarrow"));
         chargarrow->setGeometry(QRect(80, 90, 191, 31));
-        chargarrow->setPixmap(QPixmap(QString::fromUtf8(":/unchrg.bmp")));
+        chargarrow->setPixmap(QPixmap(QString::fromUtf8(":/chrg.bmp")));
         chargarrow->setScaledContents(true);
         progressBar = new QProgressBar(tab_3);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
@@ -408,7 +434,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

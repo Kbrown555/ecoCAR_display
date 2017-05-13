@@ -43,6 +43,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->orb1_7->setTextVisible(false);
     ui->orb1_9->setValue(100);
     ui->orb1_9->setTextVisible(false);
+
+    ui->MotPow->setRange(0,260);
+    ui->EnginePow->setRange(0,260);
+
     can= new CanHandler();
     startTimer();
     timerShaftOrb= new QTimer(this);
@@ -123,9 +127,10 @@ void MainWindow::updateSecondPage(){
     can->getPowerData(MotTrq,MotSpd,EngTrq);
 
     double engPow, motPow;
-    engPow=MotSpd*EngTrq;
-    motPow=MotSpd*MotTrq;
-
+    engPow=(MotSpd*EngTrq*(2.00*3.14/60.0))/1000;
+    motPow=(MotSpd*MotTrq*(2.00*3.14/60.0))/1000;
+    if(motPow<0)
+        motPow=0;
     ui->MotPow->setValue((int)motPow);
     ui->MotPow->setFormat(QString::number(motPow)+QString::fromUtf8(" kW"));
 
